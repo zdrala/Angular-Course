@@ -1,0 +1,42 @@
+<label>Server Name</label>
+
+<!-- <input type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> -->
+
+<input type="text"
+class="form-control"
+[(ngModel)]="serverName">
+<P>{{serverName}}</P>
+<button 
+class="btn btn-primary" 
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">
+Add Server</button>
+<!-- <p [innerText]="!allowNewServer"></p> -->
+<!-- <p>{{serverCreationStatus}}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<p *ngIf="!serverCreated">No server was created 1</p>
+<ng-template #noServer>
+    <p>
+        No server was created 2
+    </p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<br>
+<label>Assignment for Data Binding</label>
+
+<input type="text"
+class="form-control"
+[(ngModel)]="username">
+<p>The username is: {{username}}</p>
+
+<button 
+class="btn btn-primary" 
+[disabled]="isDisabled()"
+(click)="onReset()">
+Reset username</button>
+
+

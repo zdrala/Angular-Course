@@ -1,0 +1,9 @@
+.warningAlert{
+    background-color:rgb(221, 171, 171);
+    border:solid black 2px;
+    height: 60px;
+}
+p{
+    padding: 15px;
+    font-weight: bold;
+}
