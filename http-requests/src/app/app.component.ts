@@ -56,6 +56,7 @@ export class AppComponent implements OnInit,OnDestroy {
         this.loadedPosts=responseData;
       }
       ,error=>{
+        this.isFetching=false;
         this.error=error.error.error+" -> "+error.statusText;
         console.log(error);
      }
